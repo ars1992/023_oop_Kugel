@@ -1,13 +1,14 @@
 public class Kugel {
 
-    public double radiusInMM;
-    public double spezifischesGewicht;
-    public double fallHoeheInMeter;
+    private Kugel __ = this;
+    private double radiusInMM;
+    private double spezifischesGewicht;
+    private double fallHoeheInMeter;
 
     public Kugel(double radiusInMM, double spezifischesGewicht, double fallHoehe){
-        this.radiusInMM = radiusInMM;
-        this.spezifischesGewicht = spezifischesGewicht;
-        this.fallHoeheInMeter = fallHoehe;
+        __.radiusInMM = radiusInMM;
+        __.spezifischesGewicht = spezifischesGewicht;
+        __.fallHoeheInMeter = fallHoehe;
     }
 
     public Kugel(double radiusInMM, double spezifischesGewicht){
@@ -23,18 +24,25 @@ public class Kugel {
     }
 
     public double flaecheKugelInQmm(){
-        return 4 * Math.PI * Math.pow(radiusInMM, 2);
+        return 4 * Math.PI * Math.pow(__.radiusInMM, 2);
     }
 
     public double volumeKugelInKubikMM() {
-        return (4.0 / 3) * Math.PI * Math.pow(radiusInMM, 3);
+        return (4.0 / 3) * Math.PI * Math.pow(__.radiusInMM, 3);
     }
 
     public double masseKugelInKg() {
-        return (volumeKugelInKubikMM() / 1000_000) * spezifischesGewicht;
+        return (__.volumeKugelInKubikMM() / 1000_000) * __.spezifischesGewicht;
     }
 
     public double geschwindigkeitBeimAufprallInKmH(){
-        return Math.sqrt(2 * 9.81 * fallHoeheInMeter) * 3.6;
+        return Math.sqrt(2 * 9.81 * __.fallHoeheInMeter) * 3.6;
+    }
+
+    public void info(){
+        System.out.println("Volume in mm³: " + __.volumeKugelInKubikMM());
+        System.out.println("Masse in kg: " + __.masseKugelInKg());
+        System.out.println("Geschwindigkeit beim Aufprall in km/h: " + __.geschwindigkeitBeimAufprallInKmH());
+        System.out.println("Fläsche in mm²: " + __.flaecheKugelInQmm());
     }
 }
