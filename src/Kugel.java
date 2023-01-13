@@ -22,15 +22,19 @@ public class Kugel {
         this(0);
     }
 
+    public double flaecheKugelInQmm(){
+        return 4 * Math.PI * Math.pow(radiusInMM, 2);
+    }
+
     public double volumeKugelInKubikMM() {
         return (4.0 / 3) * Math.PI * Math.pow(radiusInMM, 3);
     }
 
-    public double gewichtKugelInKg() {
+    public double masseKugelInKg() {
         return (volumeKugelInKubikMM() / 1000_000) * spezifischesGewicht;
     }
 
-    public double geschwindigkeitAmAufprallInKmH(){
+    public double geschwindigkeitBeimAufprallInKmH(){
         return Math.sqrt(2 * 9.81 * fallHoeheInMeter) * 3.6;
     }
 }
