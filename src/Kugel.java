@@ -1,3 +1,11 @@
+/**
+               //||\\\  ////
+              // ||  |||
+             //  ||///  \\\\
+            /////|| \\     ||
+           //    ||  \\ ////
+*/
+
 public class Kugel {
 
     private double radiusInMM;
@@ -21,6 +29,32 @@ public class Kugel {
     public Kugel(){
         this(0);
     }
+
+    public double getRadiusInMM() {
+        return radiusInMM;
+    }
+
+    public void setRadiusInMM(double radiusInMM) {
+        this.radiusInMM = radiusInMM;
+    }
+
+    public double getSpezifischesGewicht() {
+        return spezifischesGewicht;
+    }
+
+    public void setSpezifischesGewicht(double spezifischesGewicht) {
+        this.spezifischesGewicht = spezifischesGewicht;
+    }
+
+    public double getFallHoeheInMeter() {
+        return fallHoeheInMeter;
+    }
+
+    public void setFallHoeheInMeter(double fallHoeheInMeter) {
+        this.fallHoeheInMeter = fallHoeheInMeter;
+    }
+
+
 
     public double flaecheKugelInQmm(){
         return 4 * Math.PI * Math.pow(this.radiusInMM, 2);
